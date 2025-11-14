@@ -3,124 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <title>Travel Blue - Leave a Review</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Travel Blue Branding Styles & Professional Polish */
+        /* [CSS styles remain unchanged from previous step] */
         :root {
-            --travelblue-darkblue: #0A2E50; /* Primary Logo Color */
-            --travelblue-lightblue: #007bff; /* Accent Color */
-            --trustpilot-green: #00b67a; /* Action Color */
-            --text-color: #2c3e50; 
-            --border-color: #c5d0e0; /* Light blue-gray border */
-            --background-page: #f0f8ff; /* Very soft, light blue background */
-            --transition-speed: 0.3s;
+            --travelblue-darkblue: #0A2E50;
+            --travelblue-lightblue: #007bff;
+            --travelblue-accent-green: #00b67a;
+            --text-color: #333;
+            --border-color: #ddd;
+            --background-light: #f8f9fa;
         }
 
         body { 
-            font-family: 'Roboto', sans-serif; 
-            padding: 10px; 
-            background-color: var(--background-page); /* Matched to light blue/white */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            padding: 20px; 
+            background-color: var(--background-light); 
             color: var(--text-color);
             line-height: 1.6;
-            margin: 0;
         }
         #form-container { 
             background: white; 
-            padding: 25px; 
-            border-radius: 12px; 
-            box-shadow: 0 8px 20px rgba(10, 46, 80, 0.15); /* Stronger, darker shadow */
-            max-width: 500px; 
-            margin: 30px auto; 
-            border-top: 6px solid var(--travelblue-darkblue); /* Strong header bar */
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            max-width: 550px; 
+            margin: 20px auto; 
+            border-top: 5px solid var(--travelblue-darkblue);
         }
         .logo-header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .logo-header img {
-            max-width: 180px; 
+            max-width: 200px;
             height: auto;
+            border-radius: 5px; 
         }
         h2 { 
-            color: var(--travelblue-darkblue); /* Dark Blue Heading */
+            color: var(--travelblue-darkblue); 
             text-align: center; 
             margin-top: 0; 
             margin-bottom: 15px; 
-            font-size: 1.6em; 
-            font-weight: 700;
+            font-size: 1.8em;
         }
         p {
             text-align: center;
             margin-bottom: 25px;
             color: #555;
-            font-weight: 300;
         }
         .form-group { 
             margin-bottom: 20px; 
         }
         label { 
             display: block; 
-            margin-bottom: 6px; 
-            font-weight: 500; 
-            color: var(--travelblue-darkblue); /* Dark Blue Label */
+            margin-bottom: 8px; 
+            font-weight: bold; 
+            color: var(--travelblue-darkblue);
         }
         input[type="text"], 
         input[type="email"] { 
-            width: 100%; 
+            width: calc(100% - 22px); 
             padding: 12px; 
             border: 1px solid var(--border-color); 
             border-radius: 6px; 
             box-sizing: border-box; 
             font-size: 1em;
-            transition: all var(--transition-speed) ease;
+            transition: border-color 0.3s ease;
         }
         input[type="text"]:focus, 
         input[type="email"]:focus {
             border-color: var(--travelblue-lightblue);
             outline: none;
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
         }
         button { 
-            background-color: var(--trustpilot-green); 
+            background-color: var(--travelblue-accent-green); 
             color: white; 
             padding: 12px 25px; 
             border: none; 
             border-radius: 6px; 
             cursor: pointer; 
             font-size: 1.1em;
-            font-weight: 700;
+            font-weight: bold;
             display: block; 
             width: 100%;
-            transition: background-color var(--transition-speed) ease;
+            transition: background-color 0.3s ease;
         }
         button:hover { 
             background-color: #009963; 
-            transform: translateY(-1px); 
         }
         #iframeContainer { 
-            padding-top: 20px; 
+            margin-top: 20px; 
+            padding-top: 30px; 
             text-align: center;
             background: white;
             padding-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-            max-width: 95%; 
-            margin: 20px auto; 
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 900px; 
+            margin-left: auto;
+            margin-right: auto;
             display: none; 
         }
         #iframeContainer h3 {
             color: var(--travelblue-darkblue);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         #urlDisplay { 
             font-size: 0.9em; 
             color: #666; 
             word-break: break-all;
-            padding: 0 15px;
+            padding: 0 20px;
         }
         #reviewIframe { 
-            width: 98%; 
+            width: 95%; 
             max-width: 800px;
             height: 1200px; 
             border: 1px solid var(--border-color); 
@@ -132,12 +128,12 @@
 </head>
 <body>
 
-    <div id="form-container" role="form" aria-label="Generate Trustpilot Review Link"> 
+    <div id="form-container"> 
         <div class="logo-header">
             <img src="https://i.postimg.cc/G2NsmzT4/travel-blue-logo.jpg" alt="Travel Blue Logo">
         </div>
-        <h2>Share Your Travel Blue Experience On Trustpilot</h2>
-        <p>Your verified link is generated instantly—no need to log in.</p>
+        <h2>Share Your Travel Blue Experience</h2>
+        <p>We'd love to hear your feedback! Please fill in your details below to generate your unique Trustpilot review form.</p>
         
         <form id="reviewForm">
             
@@ -149,28 +145,28 @@
             <div class="form-group">
                 <label for="customerEmail">Your Email Address:</label>
                 <input type="email" id="customerEmail" name="customerEmail" required>
-                <small style="display: block; margin-top: 5px; color: #555; font-size: 0.85em; font-weight: 400;">
+                <small style="display: block; margin-top: 5px; color: #555; font-size: 0.9em;">
                     Your email is kept **private** and is for **internal use only** to verify your purchase.
                 </small>
             </div>
             
             <div class="form-group">
-                <label for="referenceId">Order/Reference ID (Optional - Auto-Generated):</label>
+                <label for="referenceId">Order/Reference ID (Optional - Auto-Generated if left blank):</label>
                 <input type="text" id="referenceId" name="referenceId">
             </div>
             
-            <button type="submit">Generate My Verified Review Form</button>
+            <button type="submit">Generate My Trustpilot Review Form</button>
             
         </form>
     </div>
 
     <div id="iframeContainer">
         <h3>Your Personalized Review Form</h3>
-        <p id="urlDisplay">The form is loading securely below...</p>
+        <p id="urlDisplay">The unique URL will appear here after you generate it.</p>
     </div>
 
     <script>
-        // --- Trustpilot Configuration ---
+        // --- Your Trustpilot Configuration ---
         const DOMAIN_NAME = "premium.bundingo.com";
         const SECRET_KEY = "pt$u1>&EplNfWu89&WQAA3YAedT=Y(?t"; 
         const BASE_URL = `https://www.trustpilot.com/evaluate/embed/${DOMAIN_NAME}`;
@@ -196,7 +192,7 @@
             const name = document.getElementById('customerName').value.trim();
             let email = document.getElementById('customerEmail').value.trim().toLowerCase(); 
             let ref = document.getElementById('referenceId').value.trim(); 
-            
+
             if (!name || !email) {
                  alert("Please enter a valid name and email address.");
                  return;
@@ -206,30 +202,29 @@
                 ref = 'AUTO-' + generateRandomRefId(); 
             }
             
-            // 1. Encoding and Hashing (ONLY Email and Ref ID are included in the hash)
+            // 1. Base64 encode the email
             let b_email = btoa(email);
-            b_email = b_email.replace(/=+$/, ''); // Remove Base64 padding
+
+            // ⭐ CRITICAL FIX: Remove trailing Base64 padding (=) for Trustpilot compatibility
+            b_email = b_email.replace(/=+$/, ''); 
             
             const c_name = encodeURIComponent(name);
-            
-            // CORE HASH: Secret Key + Email + Reference ID
-            const hashString = SECRET_KEY + email + ref; 
-            
+            const hashString = SECRET_KEY + email + ref;
             const e_hash = await sha1(hashString); 
 
-            // 2. Construct the final URL (Date parameter is now omitted)
+            // 2. Construct the final URL with the non-padded Base64 string
             const uniqueURL = `${BASE_URL}?a=${ref}&b=${b_email}&c=${c_name}&e=${e_hash}`;
 
-            // 3. Hide the form and show the iframe container
+            // Hide the form and show the iframe container
             document.getElementById('form-container').style.display = 'none';
             document.getElementById('iframeContainer').style.display = 'block';
 
-            // 4. Inject the Iframe into the DOM
+            // Inject the Iframe into the DOM
             const container = document.getElementById('iframeContainer');
             
             container.innerHTML = `
                 <h3>Your Personalized Review Form</h3>
-                <p id="urlDisplay">Reference ID: <strong>${ref}</strong></p>
+                <p id="urlDisplay">Reference ID used: <strong>${ref}</strong></p>
                 <iframe 
                     id="reviewIframe"
                     src="${uniqueURL}"
@@ -242,7 +237,4 @@
     </script>
 
 </body>
-
 </html>
-
-

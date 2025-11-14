@@ -119,7 +119,8 @@
         #reviewIframe { 
             width: 95%; 
             max-width: 800px;
-            height: 1000px; 
+            /* HEIGHT INCREASED TO ENSURE SCROLLING WORKS AND SUBMIT BUTTON IS VISIBLE */
+            height: 1200px; 
             border: 1px solid var(--border-color); 
             border-radius: 8px;
             margin: 0 auto;
@@ -201,8 +202,6 @@
 
             if (!ref) {
                 ref = 'AUTO-' + generateRandomRefId(); 
-                // Optionally update the input field for user confirmation, though not strictly necessary since the form is hidden next
-                // document.getElementById('referenceId').value = ref; 
             }
             
             const b_email = btoa(email);
@@ -216,7 +215,7 @@
             document.getElementById('form-container').style.display = 'none';
             document.getElementById('iframeContainer').style.display = 'block';
 
-            // Inject the Iframe into the DOM
+            // Inject the Iframe into the DOM (Removed scrolling="no")
             const container = document.getElementById('iframeContainer');
             
             container.innerHTML = `
@@ -226,7 +225,6 @@
                     id="reviewIframe"
                     src="${uniqueURL}"
                     title="Trustpilot Embedded Review Form"
-                    scrolling="no"
                     frameborder="0"
                     allowfullscreen>
                 </iframe>

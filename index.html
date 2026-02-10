@@ -2,127 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Leave a Review</title>
+    <title>Planet Tax Free Italy - Feedback</title>
     <style>
-        /* [CSS styles remain unchanged from previous step] */
         :root {
-            --travelblue-darkblue: #0A2E50;
-            --travelblue-lightblue: #007bff;
-            --travelblue-accent-green: #00b67a;
-            --text-color: #333;
-            --border-color: #ddd;
-            --background-light: #f8f9fa;
+            --planet-black: #000000;
+            --planet-blue: #0076CE;
+            --planet-light-gray: #f4f4f4;
+            --instruction-bg: #fffbe6;
+            --instruction-border: #ffe58f;
         }
 
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
             padding: 20px; 
-            background-color: var(--background-light); 
-            color: var(--text-color);
+            background-color: var(--planet-light-gray); 
+            color: #1a1a1a;
             line-height: 1.6;
         }
+
         #form-container { 
             background: white; 
-            padding: 30px; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-            max-width: 550px; 
-            margin: 20px auto; 
-            border-top: 5px solid var(--travelblue-darkblue);
+            padding: 40px; 
+            border-radius: 0px; /* Square corporate look */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            max-width: 500px; 
+            margin: 40px auto; 
+            border-top: 6px solid var(--planet-black);
         }
+
         .logo-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
+
         .logo-header img {
-            max-width: 200px;
+            max-width: 240px;
             height: auto;
-            border-radius: 5px; 
         }
+
         h2 { 
-            color: var(--travelblue-darkblue); 
+            color: var(--planet-black); 
             text-align: center; 
-            margin-top: 0; 
-            margin-bottom: 15px; 
-            font-size: 1.8em;
+            font-size: 1.4em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
         }
-        p {
-            text-align: center;
+
+        /* Instruction for Reference ID */
+        .alert-box {
+            background-color: var(--instruction-bg);
+            border: 1px solid var(--instruction-border);
+            padding: 15px;
             margin-bottom: 25px;
-            color: #555;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #856404;
         }
+
         .form-group { 
-            margin-bottom: 20px; 
+            margin-bottom: 22px; 
         }
+
         label { 
             display: block; 
             margin-bottom: 8px; 
-            font-weight: bold; 
-            color: var(--travelblue-darkblue);
+            font-weight: 600; 
+            font-size: 0.85em;
+            text-transform: uppercase;
         }
+
         input[type="text"], 
         input[type="email"] { 
-            width: calc(100% - 22px); 
-            padding: 12px; 
-            border: 1px solid var(--border-color); 
-            border-radius: 6px; 
+            width: 100%; 
+            padding: 14px; 
+            border: 1px solid #ccc; 
             box-sizing: border-box; 
             font-size: 1em;
-            transition: border-color 0.3s ease;
+            transition: 0.2s;
         }
+
         input[type="text"]:focus, 
         input[type="email"]:focus {
-            border-color: var(--travelblue-lightblue);
+            border-color: var(--planet-blue);
             outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
         }
+
+        .helper-text {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.8em;
+            color: #666;
+        }
+
         button { 
-            background-color: var(--travelblue-accent-green); 
+            background-color: var(--planet-black); 
             color: white; 
-            padding: 12px 25px; 
+            padding: 18px; 
             border: none; 
-            border-radius: 6px; 
             cursor: pointer; 
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: bold;
-            display: block; 
             width: 100%;
-            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
         }
+
         button:hover { 
-            background-color: #009963; 
+            background-color: var(--planet-blue); 
         }
+
         #iframeContainer { 
             margin-top: 20px; 
-            padding-top: 30px; 
+            display: none; 
             text-align: center;
             background: white;
-            padding-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            max-width: 900px; 
-            margin-left: auto;
-            margin-right: auto;
-            display: none; 
+            padding: 20px;
         }
-        #iframeContainer h3 {
-            color: var(--travelblue-darkblue);
-            margin-bottom: 15px;
-        }
-        #urlDisplay { 
-            font-size: 0.9em; 
-            color: #666; 
-            word-break: break-all;
-            padding: 0 20px;
-        }
+
         #reviewIframe { 
-            width: 95%; 
-            max-width: 800px;
+            width: 100%; 
+            max-width: 900px;
             height: 1200px; 
-            border: 1px solid var(--border-color); 
-            border-radius: 8px;
+            border: none;
             margin: 0 auto;
-            display: block; 
         }
     </style>
 </head>
@@ -130,47 +134,45 @@
 
     <div id="form-container"> 
         <div class="logo-header">
-            <img src="https://i.postimg.cc/XqbLfwsp/generic-logo.png" alt="Travel Blue Logo">
+            <img src="https://i.postimg.cc/mDNTTsSz/Planet-tax-free.jpg" alt="Planet Tax Free">
         </div>
-        <h2>Share Your Experience</h2>
-        <p>We'd love to hear your feedback! Please fill in your details below to generate your unique Trustpilot review form.</p>
+
+        <h2>Italy Service Review</h2>
+        
+        <div class="alert-box">
+            <strong>Important:</strong> To ensure your review is verified correctly, please <strong>leave the Reference ID blank</strong>. Our system will generate this for you automatically.
+        </div>
         
         <form id="reviewForm">
-            
             <div class="form-group">
-                <label for="customerName">Your Name:</label>
-                <input type="text" id="customerName" name="customerName" required>
+                <label for="customerName">Full Name</label>
+                <input type="text" id="customerName" name="customerName" placeholder="Enter your name" required>
             </div>
             
             <div class="form-group">
-                <label for="customerEmail">Your Email Address:</label>
-                <input type="email" id="customerEmail" name="customerEmail" required>
-                <small style="display: block; margin-top: 5px; color: #555; font-size: 0.9em;">
-                    Your email is kept **private** and is for **internal use only** to verify your purchase.
-                </small>
+                <label for="customerEmail">Email Address</label>
+                <input type="email" id="customerEmail" name="customerEmail" placeholder="your@email.com" required>
             </div>
             
             <div class="form-group">
-                <label for="referenceId">Order/Reference ID (Optional - Auto-Generated if left blank):</label>
-                <input type="text" id="referenceId" name="referenceId">
+                <label for="referenceId">Reference ID (Auto-Generated)</label>
+                <input type="text" id="referenceId" name="referenceId" placeholder="DO NOT FILL - LEAVE BLANK">
+                <span class="helper-text">Leave this field empty to use an auto-generated ID.</span>
             </div>
             
-            <button type="submit">Generate My Trustpilot Review Form</button>
-            
+            <button type="submit">Begin Your Review</button>
         </form>
     </div>
 
     <div id="iframeContainer">
-        <h3>Your Personalized Review Form</h3>
-        <p id="urlDisplay">The unique URL will appear here after you generate it.</p>
+        <iframe id="reviewIframe" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <script>
-        // --- Your Trustpilot Configuration ---
+        // --- Configuration ---
         const DOMAIN_NAME = "premium.bundingo.com";
         const SECRET_KEY = "pt$u1>&EplNfWu89&WQAA3YAedT=Y(?t"; 
         const BASE_URL = `https://www.trustpilot.com/evaluate/embed/${DOMAIN_NAME}`;
-        // -------------------------------------
 
         function generateRandomRefId() {
             return Math.floor(100000 + Math.random() * 900000).toString();
@@ -193,52 +195,25 @@
             let email = document.getElementById('customerEmail').value.trim().toLowerCase(); 
             let ref = document.getElementById('referenceId').value.trim(); 
 
-            if (!name || !email) {
-                 alert("Please enter a valid name and email address.");
-                 return;
-            }
-
+            // Auto-population logic
             if (!ref) {
                 ref = 'IT-' + generateRandomRefId(); 
             }
             
-            // 1. Base64 encode the email
-            let b_email = btoa(email);
-
-            // ⭐ CRITICAL FIX: Remove trailing Base64 padding (=) for Trustpilot compatibility
-            b_email = b_email.replace(/=+$/, ''); 
-            
+            let b_email = btoa(email).replace(/=+$/, ''); 
             const c_name = encodeURIComponent(name);
             const hashString = SECRET_KEY + email + ref;
             const e_hash = await sha1(hashString); 
 
-            // 2. Construct the final URL with the non-padded Base64 string
             const uniqueURL = `${BASE_URL}?a=${ref}&b=${b_email}&c=${c_name}&e=${e_hash}`;
 
-            // Hide the form and show the iframe container
             document.getElementById('form-container').style.display = 'none';
             document.getElementById('iframeContainer').style.display = 'block';
 
-            // Inject the Iframe into the DOM
-            const container = document.getElementById('iframeContainer');
-            
-            container.innerHTML = `
-                <h3>Your Personalized Review Form</h3>
-                <p id="urlDisplay">Reference ID used: <strong>${ref}</strong></p>
-                <iframe 
-                    id="reviewIframe"
-                    src="${uniqueURL}"
-                    title="Trustpilot Embedded Review Form"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-            `;
+            const iframe = document.getElementById('reviewIframe');
+            iframe.src = uniqueURL;
         });
     </script>
 
 </body>
-
 </html>
-
-
-
